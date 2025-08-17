@@ -2,6 +2,8 @@
 
 Welcome to my personal 3D Developer Portfolio! This project showcases my skills in modern web development, interactive 3D experiences, and creative UI design.
 
+## 🌐 Live Demo: [priyobroto-karmakar](https://priyobroto-karmakar.vercel.app/)
+
 ## 🚀 About Me
 Hi, I'm Priyobroto Karmakar, a passionate developer focused on building immersive and visually stunning web applications. This portfolio is a demonstration of my expertise in React, Three.js, and advanced frontend technologies.
 
@@ -33,10 +35,7 @@ public/
 ## 📬 Contact
 - LinkedIn: [Priyobroto Karmakar](https://www.linkedin.com/in/priyobroto-karmakar/)
 - GitHub: [PriyobrotoKarmakar](https://github.com/PriyobrotoKarmakar)
-- Email: karmakarpriyobroto@gmail.com
 
-## 🌐 Live Demo
-> Coming soon!
 
 ## 📄 License
 This project is open source and available under the MIT License.
