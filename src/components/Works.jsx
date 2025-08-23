@@ -14,12 +14,17 @@ const ProjectCard = ({
   description,
   tags,
   image,
+  deployed_link,
   source_code_link,
 }) => {
   const tiltRef = useRef(null);
 
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: index * 0.2 }}
+    >
       <Tilt
         ref={tiltRef}
         tiltMaxAngleX={15}
@@ -29,7 +34,7 @@ const ProjectCard = ({
         tiltReverse={false}
         perspective={800}
         gyroscope={true}
-        className='bg-tertiary p-4 sm:p-5 rounded-2xl sm:w-[360px] w-full'
+        className='bg-tertiary p-4 sm:p-5 rounded-2xl w-[320px] sm:w-[350px]'
         onTiltChange={(angles) => {
           const card = tiltRef.current;
           if (!card) return;
@@ -66,6 +71,19 @@ const ProjectCard = ({
 
           <div className='absolute inset-0 flex justify-end m-3 card-img_hover' style={{ transform: "translateZ(75px)" }}>
             <div
+              onClick={() => window.open(deployed_link, "_blank")}
+              className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer mr-2'
+            >
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                viewBox="0 0 24 24" 
+                fill="white" 
+                className='w-1/2 h-1/2 object-contain'
+              >
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+              </svg>
+            </div>
+            <div
               onClick={() => window.open(source_code_link, "_blank")}
               className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
             >
@@ -101,14 +119,20 @@ const ProjectCard = ({
 const Works = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
         <p className={`${styles.sectionSubText} `}>My work</p>
         <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
       </motion.div>
 
       <div className='w-full flex'>
         <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
           className='mt-3 text-secondary text-[15px] sm:text-[17px] max-w-3xl leading-[25px] sm:leading-[30px]'
         >
           Following projects showcases my skills and experience through
@@ -119,7 +143,7 @@ const Works = () => {
         </motion.p>
       </div>
 
-      <div className='mt-10 sm:mt-20 flex flex-wrap justify-center sm:justify-start gap-5 sm:gap-7'>
+      <div className='mt-10 sm:mt-20 flex flex-wrap justify-center gap-5 sm:gap-7'>
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
@@ -128,4 +152,4 @@ const Works = () => {
   );
 };
 
-export default SectionWrapper(Works, "");
+export default SectionWrapper(Works, "work");

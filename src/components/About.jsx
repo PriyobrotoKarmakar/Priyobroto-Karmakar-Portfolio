@@ -8,9 +8,11 @@ import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 
 const ServiceCard = ({ index, title, icon }) => (
-  <Tilt className="xs:w-[250px] w-full">
+  <Tilt className="w-[240px] sm:w-[260px]">
     <motion.div
-      variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: index * 0.2 }}
       className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
     >
       <div
@@ -33,13 +35,19 @@ const ServiceCard = ({ index, title, icon }) => (
 const About = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
         <p className={styles.sectionSubText}>Introduction</p>
         <h2 className={styles.sectionHeadText}>Overview.</h2>
       </motion.div>
 
       <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
         className="mt-4 text-secondary text-[15px] sm:text-[17px] max-w-3xl leading-[25px] sm:leading-[30px]"
       >
         I'm a skilled software developer with experience in TypeScript and
@@ -49,7 +57,7 @@ const About = () => {
         real-world problems. Let's work together to bring your ideas to life!
       </motion.p>
 
-      <div className="mt-10 sm:mt-20 flex flex-wrap justify-center sm:justify-start gap-6 sm:gap-10">
+      <div className="mt-10 sm:mt-20 flex flex-wrap justify-center gap-4 sm:gap-6">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}

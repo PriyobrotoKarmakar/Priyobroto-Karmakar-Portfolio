@@ -88,45 +88,15 @@ const Contact = () => {
       className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-6 sm:gap-10 overflow-hidden`}
     >
       <motion.div
-        variants={slideIn("left", "tween", 0.2, 1)}
+        initial={{ opacity: 0, x: -100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
         className='flex-[0.75] bg-black-100 p-5 sm:p-8 rounded-2xl'
       >
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact.</h3>
         
         <div className="flex gap-5 mt-5">
-          <motion.a 
-            href="https://www.linkedin.com/in/priyobroto-karmakar/" 
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover="hover"
-            whileTap="tap"
-            variants={socialIconVariants}
-            className="social-icon-container"
-          >
-            <img 
-              src={linkedin} 
-              alt="LinkedIn" 
-              className="w-10 h-10 object-contain shadow-glow"
-            />
-          </motion.a>
-          
-          <motion.a 
-            href="https://github.com/PriyobrotoKarmakar" 
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover="hover"
-            whileTap="tap"
-            variants={socialIconVariants}
-            className="social-icon-container"
-          >
-            <img 
-              src={github} 
-              alt="GitHub" 
-              className="w-10 h-10 object-contain shadow-glow"
-            />
-          </motion.a>
-          
           <motion.a 
             href="mailto:karmakarpriyobroto@gmail.com"
             whileHover="hover"
@@ -191,7 +161,9 @@ const Contact = () => {
       </motion.div>
 
       <motion.div
-        variants={slideIn("right", "tween", 0.2, 1)}
+        initial={{ opacity: 0, x: 100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
         className='xl:flex-1 xl:h-auto md:h-[450px] sm:h-[350px] h-[250px]'
       >
         <EarthCanvas />

@@ -2,7 +2,7 @@ import { BrowserRouter } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 
-import { About, Contact, Experience, Certificates, Hero, Navbar, Tech, Works, StarsCanvas, SmoothScroll, NeonCursor, PageLoader } from "./components";
+import { About, Contact, Certificates, Hero, Navbar, Works, StarsCanvas, SmoothScroll, NeonCursor, PageLoader, Resume } from "./components";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -43,9 +43,9 @@ const App = () => {
               </div>
               <About />
               {/* <Experience /> */}
-              <Tech />
               <Works />
               <Certificates />
+              <Resume />
               <div className='relative z-0'>
                 <Contact />
                 <StarsCanvas />

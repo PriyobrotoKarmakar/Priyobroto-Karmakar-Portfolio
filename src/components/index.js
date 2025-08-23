@@ -2,11 +2,11 @@ import { EarthCanvas, BallCanvas, ComputersCanvas, StarsCanvas, SplineModel } fr
 import Hero from "./Hero";
 import Navbar from "./Navbar";
 import About from "./About";
-import Tech from "./Tech";
-import Experience from "./Experience";
+
 import Works from "./Works";
 import Feedbacks from "./Feedbacks";
 import Certificates from "./Certificates";
+import Resume from "./Resume";
 import Contact from "./Contact";
 import CanvasLoader from "./Loader";
 import SmoothScroll from "./SmoothScroll";
@@ -18,11 +18,11 @@ export {
   Hero,
   Navbar,
   About,
-  Tech,
-  Experience,
+
   Works,
   Feedbacks,
   Certificates,
+  Resume,
   Contact,
   CanvasLoader,
   SmoothScroll,

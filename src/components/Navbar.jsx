@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
-import { logo, menu, close } from "../assets";
+import { logo, menu, close, linkedin, github } from "../assets";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -64,6 +64,34 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
+
+        {/* Social Media Icons */}
+        <div className='hidden sm:flex items-center gap-4'>
+          <a
+            href="https://www.linkedin.com/in/priyobroto-karmakar/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-icon-container"
+          >
+            <img 
+              src={linkedin} 
+              alt="LinkedIn" 
+              className="w-6 h-6 object-contain"
+            />
+          </a>
+          <a
+            href="https://github.com/PriyobrotoKarmakar"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-icon-container"
+          >
+            <img 
+              src={github} 
+              alt="GitHub" 
+              className="w-6 h-6 object-contain"
+            />
+          </a>
+        </div>
 
         <div className='sm:hidden flex flex-1 justify-end items-center'>
           <img
