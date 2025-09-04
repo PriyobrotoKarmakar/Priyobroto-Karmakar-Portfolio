@@ -22,6 +22,9 @@ const SmoothScroll = ({ children }) => {
     
     // Store the scroll instance in ref for access outside this scope
     locomotiveScrollRef.current = scroll;
+    
+    // Make the scroll instance available globally for the ScrollToTopButton
+    window.locomotiveScroll = scroll;
 
     // Create a named function for the event listener so we can properly remove it
     const handleResize = () => {

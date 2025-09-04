@@ -2,7 +2,7 @@ import { BrowserRouter } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 
-import { About, Contact, Certificates, Hero, Navbar, Works, StarsCanvas, SmoothScroll, NeonCursor, PageLoader, Resume } from "./components";
+import { About, Contact, Certificates, Hero, Navbar, Works, StarsCanvas, SmoothScroll, NeonCursor, PageLoader, Resume, ScrollToTopButton } from "./components";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -37,6 +37,7 @@ const App = () => {
           <NeonCursor />
           <SmoothScroll>
             <div className='relative z-0 bg-primary'>
+              <ScrollToTopButton />
               <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
                 <Navbar />
                 <Hero />

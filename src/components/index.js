@@ -12,6 +12,7 @@ import CanvasLoader from "./Loader";
 import SmoothScroll from "./SmoothScroll";
 import NeonCursor from "./NeonCursor";
 import PageLoader from "./PageLoader";
+import ScrollToTopButton from "./ScrollToTopButton";
 
 
 export {
@@ -32,5 +33,6 @@ export {
   BallCanvas, 
   ComputersCanvas,
   SplineModel, 
-  StarsCanvas
+  StarsCanvas,
+  ScrollToTopButton
 };
